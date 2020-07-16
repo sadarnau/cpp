@@ -18,10 +18,10 @@ $(NAME):	all
 
 fclean:
 				@rm -rf $(NAME)
-				@echo "\033[1;31mJ'efface beaucoup le MEGAPHONE </3\033[m"
+				@echo "\033[1;31mJ'efface beaucoup l'annuaire </3\033[m"
 clean:
 				@rm -rf $(OBJS_PATH)
-				@echo "\033[1;31mJ'efface le MEGAPHONE </3\033[m"
+				@echo "\033[1;31mJ'efface l'annuaire </3\033[m"
 
 re:				fclean all
 

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 16:27:14 by sadarnau          #+#    #+#             */
-/*   Updated: 2020/07/13 18:46:13 by sadarnau         ###   ########.fr       */
+/*   Updated: 2020/07/16 16:53:11 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 #include "Contact.class.hpp"
 
 Contact::Contact()

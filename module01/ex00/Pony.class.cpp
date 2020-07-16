@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Pony.class.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/16 16:47:49 by sam               #+#    #+#             */
-/*   Updated: 2020/07/16 17:27:03 by sam              ###   ########.fr       */
+/*   Created: 2020/07/16 16:55:28 by sam               #+#    #+#             */
+/*   Updated: 2020/07/16 17:25:58 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,22 @@
 #include <string>
 #include "Pony.class.hpp"
 
-void    ponyOnTheStack()
+void    Pony::dance()
 {
-    Pony    desperados = Pony("Despe");
-
-	desperados.dance();
-	desperados.run();
-
+    std::cout << "Pony " << this->name << " is dancing" << std::endl;    
 }
 
-void    ponyOnTheHeap()
+void    Pony::run()
 {
-    Pony*	heinekein = new Pony("Hein");
-
-	heinekein->dance();
-	heinekein->run();
-
-	delete heinekein;
+    std::cout << "Pony " << this->name << " is runing" << std::endl;    
 }
 
-int main()
+Pony::Pony(std::string const name) : name(name)
 {
-    std::cout << "This is a pony on the stack :" << std::endl;
-    ponyOnTheStack();
+    std::cout << "Pony " << this->name << " has been created" << std::endl;
+}
 
-    std::cout << std::endl << "This is a pony on the heap :" << std::endl;
-    ponyOnTheHeap();
-
-    return 0;
+Pony::~Pony()
+{
+    std::cout << "Pony " << this->name << " has been deleted" << std::endl;
 }

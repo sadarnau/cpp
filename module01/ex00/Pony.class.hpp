@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.hpp                                  :+:      :+:    :+:   */
+/*   Pony.class.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sam <sam@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/13 16:25:08 by sadarnau          #+#    #+#             */
-/*   Updated: 2020/07/16 16:53:23 by sam              ###   ########.fr       */
+/*   Created: 2020/07/16 16:48:54 by sam               #+#    #+#             */
+/*   Updated: 2020/07/16 17:20:04 by sam              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_CLASS_H
-# define CONTACT_CLASS_H
+#ifndef PONY_CLASS_H
+# define PONY_CLASS_H
 
 # include <iostream>
 # include <string>
 
-class Contact
+class Pony
 {
-	
+private:
+	std::string name;
+
 public:
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string login;
-	std::string postal_address;
-	std::string email_address;
-	std::string phone_number;
-	std::string birthday_date;
-	std::string favorite_meal;
-	std::string underware_color;
-	std::string darkest_secret;
+    void    dance();
+    void    run();
 
-	Contact();
-	~Contact();
-
-	void	create_contact();
-	void	show_contact();
-	void	delete_contact();
+	Pony(std::string const name);
+	~Pony();
 };
 
 #endif

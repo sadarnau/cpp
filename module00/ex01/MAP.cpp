@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 14:34:07 by sadarnau          #+#    #+#             */
-/*   Updated: 2020/07/16 11:21:57 by sadarnau         ###   ########.fr       */
+/*   Updated: 2020/07/16 11:43:27 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,14 @@ int	main()
 	int		i(-1);
 	std::string cmd;
 	Contact contact[8];
+	bool BCL;
+
+	BCL = true;
 
 	std::cout << std::endl << "Welcome to My Awesome PhoneBook :D" << std::endl;
 	std::cout << "You can ADD, SEARCH or EXIT !" << std::endl << std::endl;
 	
-	while (1)
+	while (BCL)
 	{
 		std::cout << std::endl << "What is your command chief ? ";
 		std::cin >> cmd;
@@ -119,7 +122,7 @@ int	main()
 		else if (cmd.compare("EXIT") == 0)
 		{
 			std::cout << std::endl << "Bye Bye :(" << std::endl;
-			return 0;
+			BCL = false;
 		}
 
 		else

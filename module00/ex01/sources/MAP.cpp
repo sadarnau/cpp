@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 14:34:07 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/06 17:14:16 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/06 17:16:43 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main()
 		{
 			std::cout << std::endl << "Welcome to SEARCH function, this is your contact list :" << std::endl;
 			if(i < 0)
-				std::cout << std::endl << "Sorry, you have no contacts yet..." << std::endl;
+				std::cout << std::endl << "Sorry, you have no contact yet..." << std::endl;
 			else
 			{
 				contact[i].print_contacts(contact, i);

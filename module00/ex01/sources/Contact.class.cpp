@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 16:27:14 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/06 16:38:02 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/07 10:57:41 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,37 +58,37 @@ void	Contact::show_contact()
 void	Contact::create_contact()
 {
 	std::cout << "please enter the first name : ";
-	std::cin >> first_name;
+	getline(std::cin, first_name);
 	std::cout << std::endl;
 	std::cout << "please enter the last name : ";
-	std::cin >> last_name;
+	getline(std::cin, last_name);
 	std::cout << std::endl;
 	std::cout << "please enter the nickname : ";
-	std::cin >> nickname;
+	getline(std::cin, nickname);
 	std::cout << std::endl;
 	std::cout << "please enter the login : ";
-	std::cin >> login;
+	getline(std::cin, login);
 	std::cout << std::endl;
 	std::cout << "please enter the postal address : ";
-	std::cin >> postal_address;
+	getline(std::cin, postal_address);
 	std::cout << std::endl;
 	std::cout << "please enter the email address : ";
-	std::cin >> email_address;
+	getline(std::cin, email_address);
 	std::cout << std::endl;
 	std::cout << "please enter the phone number : ";
-	std::cin >> phone_number;
+	getline(std::cin, phone_number);
 	std::cout << std::endl;
 	std::cout << "please enter the birthday date : ";
-	std::cin >> birthday_date;
+	getline(std::cin, birthday_date);
 	std::cout << std::endl;
 	std::cout << "please enter the favorite meal : ";
-	std::cin >> favorite_meal;
+	getline(std::cin, favorite_meal);
 	std::cout << std::endl;
 	std::cout << "please enter the underware color : ";
-	std::cin >> underware_color;
+	getline(std::cin, underware_color);
 	std::cout << std::endl;
 	std::cout << "please enter the darkest secret : ";
-	std::cin >> darkest_secret;
+	getline(std::cin, darkest_secret);
 	std::cout << std::endl;
 }
 

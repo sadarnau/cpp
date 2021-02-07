@@ -13,6 +13,8 @@ CLANG =			clang++
 # Compilation flags
 CLANGFLAGS =		-Werror -Wall -Wextra
 
+$(NAME):	all
+
 all:			$(OBJS)
 				@$(CLANG) $(CLANGFLAGS) $(OBJS) -o $(NAME)
 				@echo "\033[1;32mC'est bon!\033[m"
@@ -26,8 +28,6 @@ $(OBJS):		$(OBJS_PATH)
 $(OBJS_PATH):
 				@echo "\033[1;32mCreation de MAP : \033[m"
 				@mkdir objs
-
-$(NAME):	all
 
 fclean:			clean
 				@rm -rf $(NAME)

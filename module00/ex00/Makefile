@@ -10,11 +10,11 @@ CLANG =			clang++
 # Compilation flags
 CLANGFLAGS =		-Werror -Wall -Wextra
 
-all:
-				@$(CLANG) $(CLANGFLAGS) $(SRC) -o $(NAME)
+$(NAME):
+				$(CLANG) $(CLANGFLAGS) $(SRC) -o $(NAME)
 				@echo "\033[1;32mC'est fait !\033[m"
 
-$(NAME):	all
+all:			$(NAME)
 
 fclean:
 				@rm -rf $(NAME)

@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.class.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 10:02:01 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/12 13:37:44 by sadarnau         ###   ########.fr       */
+/*   Created: 2021/02/12 13:52:34 by sadarnau          #+#    #+#             */
+/*   Updated: 2021/02/12 13:52:42 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.class.hpp"
+#include "Zombie.class.hpp"  
 
-int	main()
+Zombie::Zombie(void)
 {
-	Zombie		*Zomb1;
-	Zombie		*Zomb2;
-	ZombieEvent	first;
+	return ;
+}
 
-	Zomb1 = first.randomChump();
-	Zomb1->advert();
-	delete (Zomb1);
+Zombie::Zombie(std::string name, std::string type) : name(name), type(type)
+{
+	return ;
+}
+	
+Zombie::~Zombie()
+{
+	
+}
 
-	first.setZombieType("sad");
-	Zomb2 = first.newZombie("Carl");
-	Zomb2->advert();
-	delete (Zomb2);
-	return (0);
+void	Zombie::advert()
+{
+	std::cout << "<" << this->name << "(" << this->type << ")>" << " Braiiiiiiinnnssss ..." << std::endl;
 }

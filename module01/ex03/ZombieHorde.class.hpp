@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.class.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 10:02:01 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/12 13:37:44 by sadarnau         ###   ########.fr       */
+/*   Created: 2021/02/12 13:39:49 by sadarnau          #+#    #+#             */
+/*   Updated: 2021/02/12 13:59:06 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.class.hpp"
+#ifndef ZOMBIEHORDE_CLASS_H
+#define ZOMBIEHORDE_CLASS_H
 
-int	main()
+# include "Zombie.class.hpp"
+
+class ZombieHorde  
 {
-	Zombie		*Zomb1;
-	Zombie		*Zomb2;
-	ZombieEvent	first;
+private:
 
-	Zomb1 = first.randomChump();
-	Zomb1->advert();
-	delete (Zomb1);
+	int		nb_zomb;
+	Zombie	*Zombs;
 
-	first.setZombieType("sad");
-	Zomb2 = first.newZombie("Carl");
-	Zomb2->advert();
-	delete (Zomb2);
-	return (0);
-}
+public:
+
+	ZombieHorde(int n);
+	~ZombieHorde();
+	void	HordeAnnonce();
+};
+
+#endif

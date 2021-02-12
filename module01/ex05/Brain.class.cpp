@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 15:27:04 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/12 16:11:30 by sadarnau         ###   ########.fr       */
+/*   Created: 2021/02/12 15:29:13 by sadarnau          #+#    #+#             */
+/*   Updated: 2021/02/12 16:08:28 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
-#include "Brain.class.hpp"
-#include "Human.class.hpp"
-
-int main()
+#include "Brain.class.hpp"  
+	
+Brain::Brain()
 {
-	Human bob;
-	std::cout << "adr by Human identify : " << bob.identify() << std::endl;
-	std::cout << "adr by Brain identify : " << bob.getBrain().identify() << std::endl;
+	this->_nbOfCells = 1000;
+	this->_mood = "HAPPY";
+}
+	
+Brain::~Brain()
+{
+	
+}
+
+std::string	Brain::identify() const
+{
+	std::stringstream	s;
+	long				adr = (long)this;
+
+	s << "0x" << std::hex << adr;
+	return(s.str());
 }

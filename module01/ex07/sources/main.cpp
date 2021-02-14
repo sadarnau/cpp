@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 16:53:56 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/12 22:36:46 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/14 16:57:25 by lmartin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	search_replace(std::string s1, std::string s2, std::string fileName)
 		while (found != std::string::npos)
 		{
 			line.replace(line.find(s1), s1.length(), s2);
-			found = line.find(s1);
+			found = line.find(s1, found + s2.length());
 		}
 		out << line << std::endl;
 	}

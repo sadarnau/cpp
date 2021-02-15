@@ -18,15 +18,17 @@ Fixed::Fixed() : _a( 0 )
 	return ;
 }
 
-Fixed::Fixed( int const nbr ) : _a(nbr)
+Fixed::Fixed( int const nbr )
 {
 	std::cout << "Int constructor called" << std::endl;
+	this->_a = nbr << this->_nbr_bit;
 	return ;
 }
 
-Fixed::Fixed( float const nbr ) : _a(nbr)
+Fixed::Fixed( float const nbr )
 {
 	std::cout << "Float constructor called" << std::endl;
+	this->_a = roundf( nbr * ( 1 << this->_nbr_bit) );
 	return ;
 }
 
@@ -72,10 +74,10 @@ std::ostream &	operator<<(std::ostream & o, Fixed const & rhs)
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)this->_a);
+	return ((float)this->_a / (1 << this->_nbr_bit));
 }
 
 int		Fixed::toInt(void) const
 {
-	return (this->_a);
+	return (this->_a >> this->_nbr_bit);
 }

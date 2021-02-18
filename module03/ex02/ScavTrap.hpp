@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 14:15:30 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/18 14:20:28 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/18 15:35:47 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,11 @@
 # include <string>
 # include <iostream>
 # include <ctime>
+# include "ClapTrap.hpp"
 
-class ScavTrap  
+class ScavTrap : public ClapTrap
 {
 private:
-
-	int			hitPoints;
-	int			maxHitPoints;
-	int			energyPoints;
-	int			maxEnergyPoints;
-	int			level;
-	std::string	name;
-	int			meleeAttackDamage;
-	int			rangedAttackDamage;
-	int			armorDamageReduction;
 	
 public:
 
@@ -41,8 +32,6 @@ public:
 
 	void	rangedAttack( std::string const & target );
 	void	meleeAttack( std::string const & target );
-	void	takeDamage( unsigned int amount );
-	void	beRepaired( unsigned int amount );
 	void	challengeNewcomer( void );
 
 	int			getHitPoints( void ) const;

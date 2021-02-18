@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 11:15:51 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/18 14:35:32 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/18 15:46:49 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	main( void )
 	std::cout << std::endl;
 
 	delete(first);
+	delete(second);
 
 	std::cout << std::endl;
 
@@ -84,5 +85,9 @@ int	main( void )
 	std::cout << std::endl;
 	Scav1->challengeNewcomer();
 
+	std::cout << std::endl;
+
+	delete(Scav1);
+	delete(Scav2);
 	return (0);
 }

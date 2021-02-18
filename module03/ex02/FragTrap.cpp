@@ -6,13 +6,13 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 11:16:39 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/18 14:15:26 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/18 15:39:38 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp" 
 
-FragTrap::FragTrap( void )
+FragTrap::FragTrap( void ) : ClapTrap()
 {
 	this->hitPoints = 100;
 	this->maxHitPoints = 100;
@@ -29,7 +29,7 @@ FragTrap::FragTrap( void )
 	return ;
 }
 
-FragTrap::FragTrap( std::string name )
+FragTrap::FragTrap( std::string name ) : ClapTrap( name )
 {
 	this->hitPoints = 100;
 	this->maxHitPoints = 100;
@@ -71,25 +71,6 @@ void	FragTrap::meleeAttack( std::string const & target )
 {
 	std::cout << "FR4G-TP " << this->name << " attacks " << target << " at melee, causing ";
 	std::cout << this->meleeAttackDamage << " points of damage!" << std::endl;
-	return ;
-}
-
-void	FragTrap::takeDamage( unsigned int amount )
-{
-	std::cout << "FR4G-TP " << this->name << " has been attacked, he undergoes " << amount << " points of damage..." << std::endl;
-	this->hitPoints -= (amount - armorDamageReduction);
-	if (this->hitPoints < 0)
-		this->hitPoints = 0;
-	return ;
-}
-
-void	FragTrap::beRepaired( unsigned int amount )
-{
-	std::cout << "FR4G-TP " << this->name << " is repairing itself ?!" << std::endl;
-	std::cout << "Horrible to see what's going on but he gain " << amount << " hit points" << std::endl;
-	this->hitPoints += amount;
-	if (this->hitPoints > this->maxHitPoints)
-		this->hitPoints = this->maxHitPoints;
 	return ;
 }
 

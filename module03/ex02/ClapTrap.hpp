@@ -1,39 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/18 11:16:47 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/18 15:36:12 by sadarnau         ###   ########.fr       */
+/*   Created: 2021/02/18 14:39:30 by sadarnau          #+#    #+#             */
+/*   Updated: 2021/02/18 15:38:55 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_H
-#define FRAGTRAP_H
+#ifndef CLAPTRAP_H
+#define CLAPTRAP_H
 
 # include <string>
 # include <iostream>
 # include <ctime>
-# include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class ClapTrap  
 {
-private:
-	
+protected:
+
+	int			hitPoints;
+	int			maxHitPoints;
+	int			energyPoints;
+	int			maxEnergyPoints;
+	int			level;
+	std::string	name;
+	int			meleeAttackDamage;
+	int			rangedAttackDamage;
+	int			armorDamageReduction;
+
 public:
-	
-	FragTrap(void);									//default constructor
-	FragTrap( std::string name );					//constructor
-	FragTrap( FragTrap const & src);  				//copy
-	~FragTrap( void );								//destructor
-	FragTrap & operator=( FragTrap const & rhs);	//overload operators
 
-	void	rangedAttack( std::string const & target );
-	void	meleeAttack( std::string const & target );
-	void	vaulthunter_dot_exe( std::string const & target );
+	ClapTrap(void);									//default constructor
+	ClapTrap( std::string name );					//constructor
+	ClapTrap( ClapTrap const & src);  				//copy
+	~ClapTrap( void );								//destructor
+	ClapTrap & operator=( ClapTrap const & rhs);	//overload operators
 
+	void	takeDamage( unsigned int amount );
+	void	beRepaired( unsigned int amount );
 	int			getHitPoints( void ) const;
 	int			getEnergyPoints( void ) const;
 	int			getLevel( void ) const;
@@ -41,7 +48,6 @@ public:
 	int			getRanged( void ) const;
 	int			getArmor( void ) const;
 	std::string	getName( void ) const;
-
 };
 
 #endif

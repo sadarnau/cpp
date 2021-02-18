@@ -6,11 +6,12 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/18 11:15:51 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/18 14:23:59 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/18 14:35:32 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main( void )
 {
@@ -20,7 +21,6 @@ int	main( void )
 	
 	first = new FragTrap("Jack");
 	second = new FragTrap();
-	second = first;
 
 	std::cout << std::endl;
 	
@@ -51,5 +51,38 @@ int	main( void )
 	std::cout << std::endl;
 
 	delete(first);
+
+	std::cout << std::endl;
+
+	ScavTrap	*Scav1, *Scav2;
+
+	Scav1 = new ScavTrap("The Door Handler");
+	Scav2 = new ScavTrap();
+	
+	std::cout << std::endl;
+	
+	Scav1->meleeAttack("Frank");
+	Scav2->rangedAttack("Francis");
+
+	std::cout << std::endl;
+	
+	Scav1->takeDamage(60);
+	Scav1->takeDamage(30);
+	Scav1->takeDamage(100);
+	std::cout << "hitpoints : " << Scav1->getHitPoints() << std::endl;
+
+	std::cout << std::endl;
+
+	Scav1->beRepaired(250);
+	std::cout << "hitpoints : " << Scav1->getHitPoints() << std::endl;
+
+	std::cout << std::endl;
+
+	Scav1->challengeNewcomer();
+	std::cout << std::endl;
+	Scav1->challengeNewcomer();
+	std::cout << std::endl;
+	Scav1->challengeNewcomer();
+
 	return (0);
 }

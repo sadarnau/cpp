@@ -1,23 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Aweapon.cpp                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/22 16:08:05 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/22 16:08:07 by sadarnau         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "Aweapon.hpp"
 
-#include "Aweapon.hpp"  
-	
-Aweapon::Aweapon()
+Aweapon::Aweapon( void )
 {
-	
+	return ;
 }
-	
-Aweapon::~Aweapon()
+
+Aweapon::Aweapon( std::string name )
 {
-	
+	return ;
+}
+
+Aweapon::Aweapon( Aweapon const & src )
+{
+	*this = src;
+	return ;
+}
+
+Aweapon::~Aweapon( void )
+{
+	return ;
+}
+
+Aweapon & Aweapon::operator=( Aweapon const & rhs)
+{
+    // this->??? = rhs.???;
+	return ( *this );
 }

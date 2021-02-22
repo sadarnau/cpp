@@ -6,21 +6,34 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 13:39:02 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/22 13:39:03 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/22 15:49:27 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef VICTIM_H
 #define VICTIM_H
-	
+
+# include <string>
+# include <iostream>
+
 class Victim  
 {
-	private:
+protected:
 
-	public:
+	std::string	name;
+	Victim( void );
 
-		Victim();
-		~Victim();
+public:
 
+	Victim( std::string name );						//constructor
+	Victim( Victim const & src);					//copy
+	~Victim( void );								//destructor
+	Victim & operator=( Victim const & rhs );		//overload operator =
+
+	std::string	getName( void ) const;
+	virtual void getPolymorphed( void ) const;
 };
+
+std::ostream &  operator<<( std::ostream & o, Victim const & rhs );
+
 #endif

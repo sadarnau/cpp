@@ -6,13 +6,13 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 21:58:00 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/22 22:04:11 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/23 17:17:43 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PlasmaRifle.hpp"
 
-PlasmaRifle::PlasmaRifle( void ) : Aweapon("Plasma Rifle", 5, 21)
+PlasmaRifle::PlasmaRifle( void ) : AWeapon("Plasma Rifle", 5, 21)
 {
 	return ;
 }
@@ -28,13 +28,16 @@ PlasmaRifle::~PlasmaRifle( void )
 	return ;
 }
 
-// PlasmaRifle & PlasmaRifle::operator=( PlasmaRifle const & rhs)
-// {
-//     // this->??? = rhs.???;
-// 	return ( *this );
-// }
+PlasmaRifle & PlasmaRifle::operator=( PlasmaRifle const & rhs)
+{
+    this->name = rhs.name;
+    this->AP = rhs.AP;
+    this->damage = rhs.damage;
+	return ( *this );
+}
 
-void	attack( void )
+void	PlasmaRifle::attack( void ) const
 {
 	std::cout << "* piouuu piouuu piouuu *" << std::endl;
+	return ;
 }

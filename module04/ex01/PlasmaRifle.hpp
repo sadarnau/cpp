@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 21:55:47 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/22 22:04:46 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/23 17:16:15 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 # include <string>
 # include <iostream>
-# include "Aweapon.hpp"
+# include "AWeapon.hpp"
 
-class PlasmaRifle : public Aweapon
+class PlasmaRifle : public AWeapon
 {
 private:
 
@@ -25,10 +25,10 @@ public:
 
 	PlasmaRifle( void );									//default constructor
 	PlasmaRifle( PlasmaRifle const & src);  				//copy
-	~PlasmaRifle( void );								//destructor
-	// PlasmaRifle & operator=( PlasmaRifle const & rhs);      //overload operators
+	~PlasmaRifle( void );									//destructor
+	PlasmaRifle & operator=( PlasmaRifle const & rhs);      //overload operators
 	
-	void	attack( void );
+	void	attack( void ) const;
 };
 
 #endif

@@ -55,8 +55,7 @@ std::string const &	Character::getName( void ) const
 
 void 				Character::equip( AMateria * m )
 {
-	this->inventory[this->nb_equip] = m;
-	this->nb_equip++;
+
 	return ;
 }
 

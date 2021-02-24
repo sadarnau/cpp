@@ -18,12 +18,16 @@ else
         exit 0
 fi
 
-touch $path/$1.cpp
-touch $path/$1.hpp
+rm -f $path/$1.cpp
+rm -f $path/$1.hpp
+
+
+vim +Stdheader +wq $path/$1.cpp
+vim +Stdheader +wq $path/$1.hpp
 
 name=$(echo "$1" | tr '[:lower:]' '[:upper:]')
 
-printf "#ifndef ${name}_H\n#define ${name}_H\n\n" > $1.hpp
+printf "#ifndef ${name}_HPP\n#define ${name}_HPP\n\n" >> $1.hpp
 
 printf "class $1\n{\nprivate:\n\n\npublic:\n\n" >> $1.hpp
 
@@ -37,7 +41,7 @@ printf "\n};\n\n#endif\n" >> $1.hpp
 
 
 
-printf "#include \"$1.hpp\"\n\n" > $1.cpp
+printf "#include \"$1.hpp\"\n\n" >> $1.cpp
 
 printf "$1::$1( void )
 {

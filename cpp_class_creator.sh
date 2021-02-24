@@ -27,7 +27,7 @@ vim +Stdheader +wq $path/$1.hpp
 
 name=$(echo "$1" | tr '[:lower:]' '[:upper:]')
 
-printf "#ifndef ${name}_HPP\n#define ${name}_HPP\n\n" >> $1.hpp
+printf "#ifndef ${name}_HPP\n#define ${name}_HPP\n\n# include <string>\n# include <iostream>\n\n" >> $1.hpp
 
 printf "class $1\n{\nprivate:\n\n\npublic:\n\n" >> $1.hpp
 
@@ -35,7 +35,7 @@ printf "	$1( void );									//default constructor
 	$1( std::string name );					//constructor
 	$1( $1 const & src);  				//copy
 	~$1( void );								//destructor
-	$1 & operator=( $1 const & rhs );      //overload operators" >> $1.hpp
+	$1 & operator=( $1 const & rhs );		//overload operators" >> $1.hpp
 
 printf "\n};\n\n#endif\n" >> $1.hpp
 

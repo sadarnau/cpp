@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 22:31:09 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/23 17:45:58 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/24 21:02:19 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ Character & Character::operator=( Character const & rhs)
 
 void		Character::recoverAP( void )
 {
-	if (this->AP + 10 <= 40)
-		this->AP += 10;
+	this->AP += 10;
+	if (this->AP  > 40)
+		this->AP = 40;
 	return ;
 }
 

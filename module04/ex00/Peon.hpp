@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 13:39:10 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/22 15:46:47 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/24 20:57:15 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 
 	Peon( std::string name );					//constructor
 	Peon( Peon const & src );					//copy
-	~Peon( void );								//destructor
+	virtual ~Peon( void );						//destructor
 	Peon & operator=( Peon const & rhs );		//overload operator =
 
 	std::string	getName( void ) const;

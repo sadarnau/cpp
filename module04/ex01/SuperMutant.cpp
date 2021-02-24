@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 22:29:01 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/22 22:29:02 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/24 21:00:40 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ SuperMutant::~SuperMutant( void )
 	return ;
 }
 
-// SuperMutant & SuperMutant::operator=( SuperMutant const & rhs)
-// {
-//     // this->??? = rhs.???;
-// 	return ( *this );
-// }
+SuperMutant & SuperMutant::operator=( SuperMutant const & rhs)
+{
+	this->type = rhs.type;
+	this->hp = rhs.hp;
+	return ( *this );
+}
+
 
 void	SuperMutant::takeDamage( int dmg )
 {

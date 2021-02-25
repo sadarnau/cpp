@@ -6,10 +6,9 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:42:02 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/24 15:08:20 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 15:59:20 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "Cure.hpp"
 
@@ -36,13 +35,13 @@ Cure & Cure::operator=( Cure const & rhs)
 	return ( *this );
 }
 
-Cure *	Cure::clone( void ) const
+AMateria *	Cure::clone( void ) const
 {
     Cure * clone = new Cure(*this);
     return (clone);
 }
 
-void	Cure::use( ICharacter & target )
+void		Cure::use( ICharacter & target )
 {
-	std::cout << "* heals " << target->name << "’s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }

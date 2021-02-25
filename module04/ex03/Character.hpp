@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:42:13 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/24 15:23:36 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 15:56:49 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <string>
 # include "ICharacter.hpp"
+# include "AMateria.hpp"
 
 class Character : public ICharacter
 {

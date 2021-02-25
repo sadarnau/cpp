@@ -6,17 +6,18 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:43:34 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/24 14:46:55 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 16:33:31 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
-#include "ICharacter.hpp"
+#include <string>
+#include <iostream>
 
 int main()
 {
@@ -36,7 +37,35 @@ int main()
 	
 	me->use(0, *bob);
 	me->use(1, *bob);
+
+	std::cout << std::endl << "----------" << std::endl << std::endl;	
+
+	std::cout << "Creating new false materia \"kriket\" try to equip on index 2" << std::endl;	
+	tmp = src->createMateria("crognement");
+	me->equip(tmp);
+	std::cout << "Using it (nothing should appear) :" << std::endl << std::endl;	
+	me->use(2, *bob);
+
+	std::cout << "Unequip Cure (index 1) and using it (nothing should appear) :" << std::endl << std::endl;	
+	me->unequip(1);
+	me->use(1, *bob);
+
+	std::cout << std::endl << "----------" << std::endl << std::endl;	
+
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
 	
+	std::cout << "Equip all index and using them :" << std::endl << std::endl;	
+
+	me->use(0, *bob);
+	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+
 	delete bob;
 	delete me;
 	delete src;

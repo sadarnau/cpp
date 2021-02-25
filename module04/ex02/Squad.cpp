@@ -6,11 +6,12 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:13:00 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/24 14:28:14 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 17:39:08 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
+#include <iostream>
 
 Squad::Squad( void ) : Marine_list(NULL), count(0)
 {
@@ -68,15 +69,15 @@ int				Squad::getCount( void ) const
 
 ISpaceMarine *	Squad::getUnit( int N ) const
 {
-	ISpaceMarine *ptr;
+	t_SpaceMarine *ptr;
 
 	if (N < 0 || N >= this->count)
-		return 0;
+		return NULL;
 
-	ptr = this->Marine_list[0].Marine;
+	ptr = this->Marine_list;
 	for(int i = 0; i < N; i++)
-		ptr = this->Marine_list[i].next->Marine;
-	return(ptr);
+		ptr = ptr->next;
+	return (ptr->Marine);
 }
 
 int				Squad::push( ISpaceMarine * SpaceMarine )

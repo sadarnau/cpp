@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:04:46 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/24 14:39:15 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 17:43:39 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,18 @@ int main()
 	ISpaceMarine* copy_boby = boby->clone();
 	ISpaceMarine* copy_jimmy = jimmy->clone();
 
+	std::cout << std::endl << "Creating a new squad and pushing 4 Marines :" << std::endl << std::endl;
+
 	vlc = new Squad;
 
-	vlc->push(boby);
-	vlc->push(jimmy);
-	vlc->push(copy_jimmy);
-	vlc->push(copy_boby);
+	std::cout << "count = " << vlc->push(boby) << std::endl;
+	std::cout << "count = " << vlc->push(jimmy) << std::endl;
+	std::cout << "count = " << vlc->push(copy_jimmy) << std::endl;
+	std::cout << "count = " << vlc->push(copy_boby) << std::endl;
 
-	std::cout << std::endl << "There is " << vlc->getCount() << " units !" << std::endl << std::endl;
-	
 	for (int i = 0; i < vlc->getCount(); ++i)
 	{
+	std::cout << std::endl << "marine number : " << i << std::endl;
 		ISpaceMarine* cur = vlc->getUnit(i);
 		cur->battleCry();
 		cur->rangedAttack();

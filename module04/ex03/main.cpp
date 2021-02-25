@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:43:34 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/25 16:55:30 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 17:07:17 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int main()
 	std::cout << "Unequip Cure (index 1) and using it (nothing should appear) :" << std::endl << std::endl;	
 	me->unequip(1);
 	me->use(1, *bob);
+
+	delete (tmp); // because unequip doesn't delete materia
 
 	std::cout << "Creating new false materia \"kriket\" try to equip on index 1" << std::endl;	
 	tmp = src->createMateria("kriket");

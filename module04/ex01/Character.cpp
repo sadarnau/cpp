@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 22:31:09 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/24 21:02:19 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 18:48:10 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Character::Character( std::string const & name ) : name(name), AP(40)
 {
+	this->weapon = NULL;
 	return ;
 }
 

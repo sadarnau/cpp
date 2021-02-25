@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 11:13:00 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/25 17:39:08 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 18:57:04 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,22 @@ Squad::Squad( void ) : Marine_list(NULL), count(0)
 
 Squad::Squad( Squad const & src )
 {
+	t_SpaceMarine *	ptr;
+	t_SpaceMarine *	ptr2;
+
+	ptr = this->Marine_list;
+	if (ptr)
+	{
+		while(ptr->next)
+		{
+			delete (ptr->Marine);
+			ptr2 = ptr->next;
+			delete (ptr);
+			ptr = ptr2;
+		}
+		delete (ptr->Marine);
+		delete (ptr);
+	}
 	*this = src;
 	return ;
 }
@@ -46,9 +62,23 @@ Squad::~Squad( void )
 Squad & Squad::operator=( Squad const & rhs)
 {
 	t_SpaceMarine *	ptr;
+	t_SpaceMarine *	ptr2;
 	int				i;	
 	
 	ptr = this->Marine_list;
+	
+	if (ptr)
+	{
+		while(ptr->next)
+		{
+			delete (ptr->Marine);
+			ptr2 = ptr->next;
+			delete (ptr);
+			ptr = ptr2;
+		}
+		delete (ptr->Marine);
+		delete (ptr);
+	}
 
 	i = 0;
 	while (i < rhs.count)

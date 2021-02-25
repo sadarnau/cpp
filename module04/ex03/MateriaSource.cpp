@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:42:26 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/25 16:55:42 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 19:01:27 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ MateriaSource::MateriaSource( void )
 
 MateriaSource::MateriaSource( MateriaSource const & src )
 {
+	for (int i = 0; i < 4; i++)
+		if (this->inventory[i])
+			delete (this->inventory[i]);
 	*this = src;
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:42:13 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/25 16:20:11 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 19:00:42 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ Character::Character( std::string name ) : name(name)
 
 Character::Character( Character const & src )
 {
+	for (int i = 0; i < 4; i++)
+		if (this->inventory[i])
+			delete (this->inventory[i]);
 	*this = src;
 	return ;
 }
@@ -41,7 +44,11 @@ Character::~Character( void )
 Character & Character::operator=( Character const & rhs)
 {
     this->name = rhs.name;
-
+	
+	for (int i = 0; i < 4; i++)
+		if (this->inventory[i])
+			delete (this->inventory[i]);
+	
 	for (int i = 0; i < 4; i++)
 		this->inventory[i] = rhs.inventory[i];
  

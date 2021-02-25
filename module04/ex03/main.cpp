@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 14:43:34 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/25 16:33:31 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/25 16:55:30 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ int main()
 
 	std::cout << std::endl << "----------" << std::endl << std::endl;	
 
-	std::cout << "Creating new false materia \"kriket\" try to equip on index 2" << std::endl;	
-	tmp = src->createMateria("crognement");
-	me->equip(tmp);
-	std::cout << "Using it (nothing should appear) :" << std::endl << std::endl;	
-	me->use(2, *bob);
-
 	std::cout << "Unequip Cure (index 1) and using it (nothing should appear) :" << std::endl << std::endl;	
 	me->unequip(1);
+	me->use(1, *bob);
+
+	std::cout << "Creating new false materia \"kriket\" try to equip on index 1" << std::endl;	
+	tmp = src->createMateria("kriket");
+	me->equip(tmp);
+	std::cout << "Using it (nothing should appear) :" << std::endl << std::endl;	
 	me->use(1, *bob);
 
 	std::cout << std::endl << "----------" << std::endl << std::endl;	

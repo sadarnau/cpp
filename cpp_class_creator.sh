@@ -35,7 +35,7 @@ printf "	$1( void );									//default constructor
 	$1( std::string name );					//constructor
 	$1( $1 const & src);  				//copy
 	~$1( void );								//destructor
-	$1 & operator=( $1 const & rhs );		//overload operators" >> $1.hpp
+	$1 & operator=( $1 const & rhs );		//overload operator =" >> $1.hpp
 
 printf "\n};\n\n#endif\n" >> $1.hpp
 

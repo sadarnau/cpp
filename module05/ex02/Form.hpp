@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 15:04:04 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/26 16:02:20 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/26 16:53:20 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
 
 	Form( std::string name, int rgs, int rge );	//constructor
 	Form( Form const & src);  					//copy
-	~Form( void );								//destructor
+	virtual ~Form( void );						//destructor
 	Form & operator=( Form const & rhs );		//overload operators
 
 	std::string const &	getName( void ) const ;
@@ -42,6 +42,7 @@ public:
 	bool 				getSign( void ) const ;
 
 	void				beSigned( Bureaucrat const & bureacrat );
+	virtual void		execute( Bureaucrat const & executor ) const = 0;
 
 	class GradeTooHighException : public std::exception
 	{

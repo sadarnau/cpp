@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 16:20:08 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/26 16:20:08 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/02/26 16:50:14 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,22 @@
 
 # include <string>
 # include <iostream>
+# include "Form.hpp"
 
-class PresidentialPardonForm
+class PresidentialPardonForm : public Form
 {
 private:
 
+	std::string	target;
 
 public:
 
-	PresidentialPardonForm( void );									//default constructor
-	PresidentialPardonForm( std::string name );					//constructor
+	PresidentialPardonForm( std::string target );								//constructor
 	PresidentialPardonForm( PresidentialPardonForm const & src);  				//copy
-	~PresidentialPardonForm( void );								//destructor
-	PresidentialPardonForm & operator=( PresidentialPardonForm const & rhs );		//overload operators
+	~PresidentialPardonForm( void );											//destructor
+	PresidentialPardonForm & operator=( PresidentialPardonForm const & rhs );	//overload operators
+
+	void	execute( Bureaucrat const & executor ) const;
 };
 
 #endif

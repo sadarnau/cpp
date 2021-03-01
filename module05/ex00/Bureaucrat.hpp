@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:36:18 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/26 14:47:38 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 14:56:04 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class Bureaucrat
 {
 private:
 
-	std::string	name;
-	int			grade;
+	std::string const	name;
+	int					grade;
 
 public:
 

@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:36:17 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/26 14:56:54 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 14:55:59 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ Bureaucrat::~Bureaucrat( void )
 
 Bureaucrat & Bureaucrat::operator=( Bureaucrat const & rhs)
 {
-    this->name = rhs.name;
     this->grade = rhs.grade;
 	return ( *this );
 }

@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:55:17 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/26 15:02:42 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 14:58:46 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ int main( void )
     Bureaucrat  *chief;
     Bureaucrat  *coffee_guy;
 
-    std::cout << std::endl << "Trying to instanciate three Bureaucrats with one of grade 151.." << std::endl << std::endl;
+    std::cout << std::endl << "Trying to instanciate three Bureaucrats with one of grade 151 and one 0.." << std::endl << std::endl;
 
 	try
 	{
-		god = new Bureaucrat( "god", 1 );
 		chief = new Bureaucrat( "chief", 42 );
 		coffee_guy = new Bureaucrat( "coffee_guy", 151 );
 	}
@@ -32,7 +31,17 @@ int main( void )
 		std::cerr << "Error message : " << e.what() << std::endl;
     }
 
+	try
+	{
+		god = new Bureaucrat( "god", 0 );
+	}
+	catch ( std::exception & e )
+    {
+		std::cerr << "Error message : " << e.what() << std::endl;
+    }
+
 	coffee_guy = new Bureaucrat( "coffee_guy", 150 );
+	god = new Bureaucrat( "god", 1 );
 
     std::cout << std::endl << "-------" << std::endl << std::endl;
 

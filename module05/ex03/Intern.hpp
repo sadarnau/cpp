@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:00:38 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/03/01 14:22:26 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 15:53:44 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ public:
 	Intern & operator=( Intern const & rhs );		//overload operator =
 
 	Form *	makeForm( std::string const & form, std::string const & target );
+	Form *	createRRF( std::string const & target );
+	Form *	createSCF( std::string const & target );
+	Form *	createPPF( std::string const & target );
 };
 
 #endif

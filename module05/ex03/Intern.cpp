@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 14:00:38 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/03/01 15:28:25 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 15:55:37 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,38 @@ Intern & Intern::operator=( Intern const & rhs)
 
 Form *	Intern::makeForm( std::string const &  form, std::string const &  target )
 {
-	Form *allForms[3];
+	Form *(Intern::*functions[3])(std::string const &);
 	Form *returnForm = NULL;
 	std::string formNames[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
 
-	allForms[0] = new RobotomyRequestForm(target);
-	allForms[1] = new PresidentialPardonForm(target);
-	allForms[2] = new ShrubberyCreationForm(target);
+	functions[0] = &Intern::createRRF;
+	functions[1] = &Intern::createPPF;
+	functions[2] = &Intern::createSCF;
 
 	for (int i = 0; i < 3; i++)
 		if (formNames[i] == form)
 		{
 			std::cout << "Intern creates " << form << " form." << std::endl;
-			returnForm = allForms[i];
+			returnForm = (this->*functions[i])(target);
 		}
 
 	if (!returnForm)
 		std::cout << "Intern didn't find any form with this name... (" << form << ")" << std::endl;
-	else
-		for (int i = 0; i < 3; i++)
-			if (allForms[i] != returnForm)
-				delete allForms[i];
 
 	return returnForm;
+}
+
+Form *	Intern::createRRF( std::string const & target )
+{
+	return (new RobotomyRequestForm(target));
+}
+
+Form *	Intern::createPPF( std::string const & target )
+{
+	return (new PresidentialPardonForm(target));
+}
+
+Form *	Intern::createSCF( std::string const & target )
+{
+	return (new ShrubberyCreationForm(target));
 }

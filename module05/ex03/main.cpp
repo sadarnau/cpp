@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:55:17 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/03/01 15:28:48 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 15:55:49 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ int main( void )
 	delete (PPF);
 	delete (SCF);
 
+	while (1);
 	return 0;
 }

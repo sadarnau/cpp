@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 15:04:04 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/26 16:49:05 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 13:41:32 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void				Form::execute( Bureaucrat const & executor ) const
 		throw std::string("The form is not signed...");
 
 	if (this->required_grade_exc < executor.getGrade())
-		throw (Form::GradeTooLowException());
+		throw (std::string("The grade is too low..."));
 	return ;
 }
 

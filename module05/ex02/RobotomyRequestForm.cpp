@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 16:19:56 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/26 17:26:56 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 13:28:56 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void RobotomyRequestForm::execute( Bureaucrat const & executor ) const
 	if (rand() % 2 == 1)
 		std::cout << this->target << " has been Robotomized" << std::endl;
 	else
-		std::cout << " the Robotomization has been a failure...." << std::endl;
+		std::cout << "The Robotomization has been a failure...." << std::endl;
 	
 	return ;
 }

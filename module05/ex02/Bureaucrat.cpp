@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:36:17 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/26 15:57:39 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 13:45:47 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,20 @@ void				Bureaucrat::signForm( Form & form)
 		std::cerr << " because " << e.what() << std::endl;
 	}
 	return ;
+}
+
+void				Bureaucrat::executeForm( Form const & form )
+{
+	try
+	{
+		std::cout << this->name << " is executing \'" << form.getName() << "\'" << std::endl;
+		form.execute(*this);
+	}
+	catch(const std::string & e)
+	{
+		std::cerr << "Cannot execute the form because : ";
+		std::cerr << e << '\n';
+	}
 }
 
 

@@ -6,14 +6,14 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:55:17 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/26 17:27:25 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 13:46:28 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include <exception>
 
 int main( void )
@@ -34,24 +34,48 @@ int main( void )
 
     std::cout << std::endl << "-------" << std::endl << std::endl;
 
-    std::cout << std::endl << "Instanciating three Forms with one wrong (151) :" << std::endl << std::endl;
+    std::cout << std::endl << "Instanciating three Forms" << std::endl << std::endl;
 
 	Form  *FormPPF = new PresidentialPardonForm("Ricky");
-	Form  *FormSCF = new ShrubberyCreationForm("home");
-	Form  *FormRRF = new ShrubberyCreationForm("home");
-	// Form  *Form150;
+	Form  *FormSCF = new ShrubberyCreationForm("Home");
+	Form  *FormRRF = new RobotomyRequestForm("BENDER");
+
+	std::cout << *FormPPF << std::endl;
+	std::cout << *FormSCF << std::endl;
+	std::cout << *FormRRF << std::endl;
+
+    std::cout << std::endl << "-------" << std::endl << std::endl;
+
+    std::cout << std::endl << "Signing all forms, one wrong !" << std::endl << std::endl;
+
+	chief->signForm(*FormPPF);
+	god->signForm(*FormSCF);
+	chief->signForm(*FormRRF);
+
+    std::cout << std::endl << "-------" << std::endl << std::endl;
+
+    std::cout << std::endl << "Executing all forms, one is not signed, one have to low grade!" << std::endl << std::endl;
+
+	god->executeForm(*FormPPF);
+	chief->executeForm(*FormSCF);
+	coffee_guy->executeForm(*FormRRF);
+
+    std::cout << std::endl << "-------" << std::endl << std::endl;
+
+    std::cout << std::endl << "Fixing everything and executing again !" << std::endl << std::endl;
 
 	god->signForm(*FormPPF);
-	FormPPF->execute(*god);
+	god->executeForm(*FormPPF);
+	chief->executeForm(*FormRRF);
 
-	god->signForm(*FormSCF);
-	FormSCF->execute(*god);
-	
+    std::cout << std::endl << std::endl;
+
 	delete (chief);
 	delete (god);
 	delete (coffee_guy);
 	delete (FormPPF);
 	delete (FormSCF);
+	delete (FormRRF);
 
 	return 0;
 }

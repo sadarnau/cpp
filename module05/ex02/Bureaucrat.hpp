@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 12:36:18 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/02/26 16:02:33 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/03/01 13:36:24 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ public:
 	void				increment( void );
 	void				decrement( void );
 	void				signForm( Form & form);
-
+	void				executeForm( Form const & form );
+ 
 	class GradeTooHighException : public std::exception
 	{
 		public:

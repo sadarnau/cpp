@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 10:56:37 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/03/18 12:17:32 by lmartin          ###   ########.fr       */
+/*   Updated: 2021/03/18 12:26:06 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,19 @@ int main()
 	Data	*data;
 	srand(time(NULL));
 
-	raw = serialize();
-	data = deserialize(raw);
+	for (int i = 0; i < 4; i++)
+	{
+		std::cout << "\ntest " << i << "/3 :\n";
+		raw = serialize();
+		data = deserialize(raw);
 
-	std::cout << "\n\n----------\n\n";
-	std::cout << "In data :\n\n";
+		std::cout << "\n\nIn data :\n\n";
 
-	std::cout << "S1 =\t" << data->s1 << std::endl;
-	std::cout << "nbr =\t" << data->nbr << std::endl;
-	std::cout << "S2 =\t" << data->s2 << std::endl;
+		std::cout << "S1 =\t" << data->s1 << std::endl;
+		std::cout << "nbr =\t" << data->nbr << std::endl;
+		std::cout << "S2 =\t" << data->s2 << std::endl;
 
-	std::cout << std::endl;	
+		std::cout << "\n\n----------\n\n";
+	}
 	return 0;
 }

@@ -1,4 +1,4 @@
-NAME =			aFewFunctions
+NAME =			Iter
 
 # SOURCES
 SRC =			main.cpp
@@ -26,12 +26,12 @@ $(OBJS_PATH)%.o: $(SRC_PATH)%.cpp
 $(OBJS):		|$(OBJS_PATH)
 
 $(OBJS_PATH):
-				@echo "\033[1;32mCreation de '"aFewFunctions"' : \033[m"
+				@echo "\033[1;32mCreation de '"Iter"' : \033[m"
 				@mkdir $(OBJS_PATH)
 
 fclean:			clean
 				@rm -rf $(NAME)
-				@echo "\033[1;31mJ'efface '"aFewFunctions"' </3\033[m"
+				@echo "\033[1;31mJ'efface '"Iter"' </3\033[m"
 clean:
 				@rm -rf $(OBJS_PATH)
 				@echo "\033[1;31mJ'efface les objets </3\033[m"

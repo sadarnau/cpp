@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 16:15:24 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/03/18 16:43:00 by sadarnau         ###   ########.fr       */
+/*   Created: 2021/03/18 16:49:32 by sadarnau          #+#    #+#             */
+/*   Updated: 2021/03/18 17:00:08 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
 # include <string>
 # include <iostream>
 
 template < typename T >
-void	iter(T * array, int len, void (*f)(T const &))
+class Array
 {
-    for (int i = 0; i < len; i++)
-		f(array[i]);
-}
+private:
 
-template < typename T >
-void	print(T const & var)
-{
-	std::cout << var << std::endl;
-}
+	T *	array;
+	int	len;
+
+public:
+
+	Array( void ) : len(0)						//default constructor
+	{
+		this->array = new T[0];
+	}
+
+	Array( std::string name )					//constructor
+	{}
+	Array( Array const & src);  				//copy
+	~Array( void );								//destructor
+	Array & operator=( Array const & rhs );		//overload operator =
+};
 
 #endif

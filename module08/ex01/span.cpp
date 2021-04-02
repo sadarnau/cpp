@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:19:12 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/04/02 16:51:23 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/04/02 16:53:05 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,12 @@ unsigned int	Span::shortestSpan( void )
 	std::vector<int>::iterator	it;
 	int							min;
 
-	min = this->array.begin();
+	min = this->array[0];
 	it = this->array.begin();
 
 	for (it; it < this->array.end(); it++)
 	{
-		min = this->array[*it];
-	
+		
 	}
 }
 

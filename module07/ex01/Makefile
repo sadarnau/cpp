@@ -11,7 +11,7 @@ OBJS =			$(SRC:%.cpp=$(OBJS_PATH)%.o)
 CLANG =			clang++
 
 # Compilation flags
-CLANGFLAGS =		-Werror -Wall -Wextra
+CLANGFLAGS =		-Werror -Wall -Wextra -std=c++98
 
 
 $(NAME):		$(OBJS)

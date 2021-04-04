@@ -6,13 +6,13 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:19:12 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/04/02 16:53:05 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/04/04 16:23:51 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
-Span::Span( int n ) : N(N)
+Span::Span( int n ) : N(n)
 {
     return ;
 }
@@ -43,21 +43,63 @@ void	Span::addNumber( int n )
 		throw (std::exception());
 }
 
+void	Span::fillArrayNumber( void )
+{
+	while (this->array.size() < this->N)
+		this->array.push_back(rand());
+	return;
+}
+
 unsigned int	Span::shortestSpan( void )
 {
 	std::vector<int>::iterator	it;
-	int							min;
+	std::vector<int>::iterator	it2;
+	unsigned int				min;
 
-	min = this->array[0];
-	it = this->array.begin();
-
-	for (it; it < this->array.end(); it++)
+	if (this->array.size() >= 2)
 	{
-		
+		it = this->array.begin();
+		min = std::max(*it, this->array[1]) - std::min(*it, this->array[1]);
+		for (; it < this->array.end(); it++)
+			for (it2 = this->array.end(); it2 != it; it2--)
+				if (static_cast<unsigned int>(std::max(*it, *it2) -
+						std::min(*it, *it2)) < min)
+					min = std::max(*it, *it2) - std::min(*it, *it2);
 	}
+	else
+		throw(std::exception());
+	return min;
 }
 
 unsigned int	Span::longestSpan( void )
 {
+	std::vector<int>::iterator	it;
+	int							mmax;
+	int							mmin;
 
+	if (this->array.size() >= 2)
+	{
+		mmax = this->array[0];
+		mmin = this->array[0];
+		for (it = this->array.begin(); it < this->array.end(); it++)
+		{
+			if (*it > mmax)
+				mmax = *it;
+			if (*it < mmin)
+				mmin = *it;
+		}
+	}
+	else
+		throw(std::exception());
+	return (mmax - mmin);
+}
+
+void			Span::showNumbers( void )
+{
+	std::vector<int>::iterator it;
+
+	for (it = this->array.begin(); it != this->array.end(); it++)
+		std::cout << *it << " ";
+	std::cout << "\n\n";
+	return;
 }

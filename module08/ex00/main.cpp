@@ -15,7 +15,6 @@
 int	main( void )
 {
 	std::vector<int> vec;
-	std::vector<int>::iterator it;
 	
 	std::cout << "\n-------- Testing with empty vec --------" << std::endl;
 	std::cout << "         (searching '3' in vec)\n" << std::endl;

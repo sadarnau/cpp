@@ -16,6 +16,7 @@
 # include <vector>
 # include <iostream>
 # include <string>
+# include <algorithm>
 
 template < typename T >
 typename T::iterator	easyfind( T & contInt, int search )

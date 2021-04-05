@@ -54,14 +54,13 @@ unsigned int	Span::shortestSpan( void )
 {
 	std::vector<int>::iterator	it;
 	std::vector<int>::iterator	it2;
-	unsigned int				min;
+	unsigned int			min;
 
 	if (this->array.size() >= 2)
 	{
-		it = this->array.begin();
 		min = UINT_MAX;
-		for (; it < this->array.end(); it++)
-			for (it2 = this->array.end(); it2 != it; it2--)
+		for (it = this->array.begin(); it < this->array.end(); it++)
+			for (it2 = this->array.end() - 1; it2 != it; it2--)
 				if (static_cast<unsigned int>(std::max(*it, *it2) -
 						std::min(*it, *it2)) < min)
 					min = std::max(*it, *it2) - std::min(*it, *it2);

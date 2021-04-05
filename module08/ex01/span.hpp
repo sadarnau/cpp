@@ -13,6 +13,7 @@
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
+# include <stdlib.h>
 # include <string>
 # include <iostream>
 # include <vector>

@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:19:12 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/04/04 16:23:51 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/04/05 16:37:35 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ unsigned int	Span::shortestSpan( void )
 	if (this->array.size() >= 2)
 	{
 		it = this->array.begin();
-		min = std::max(*it, this->array[1]) - std::min(*it, this->array[1]);
+		min = UINT_MAX;
 		for (; it < this->array.end(); it++)
 			for (it2 = this->array.end(); it2 != it; it2--)
 				if (static_cast<unsigned int>(std::max(*it, *it2) -

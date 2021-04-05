@@ -6,7 +6,7 @@
 /*   By: sadarnau <sadarnau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 14:19:16 by sadarnau          #+#    #+#             */
-/*   Updated: 2021/04/04 16:16:23 by sadarnau         ###   ########.fr       */
+/*   Updated: 2021/04/05 16:37:44 by sadarnau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string>
 # include <iostream>
 # include <vector>
+# include <climits>
 
 class Span
 {
